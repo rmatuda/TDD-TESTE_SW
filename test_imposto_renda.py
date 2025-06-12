@@ -41,12 +41,12 @@ def test_calcula_base_de_calculo():
     assert base_calculo == 4500.0
 
 @pytest.mark.parametrize("rendimento, deducao, imposto_esperado", [
-    (1900.0, 0, 0.0),                                  # Faixa 1: Isento
-    (2000.0, 100, 0.0),                                # Faixa 1: Isento (após dedução)
-    (3000.0, 200, 69.20),                              # Faixa 2: 7.5%
-    (4000.0, 300, 190.20),                             # Faixa 3: 15%
-    (5000.0, 400, 398.87),                             # Faixa 4: 22.5%
-    (6000.0, 500, 643.14)                              # Faixa 5: 27.5%
+    (1900.0, 0, 0.0),                                  
+    (2000.0, 100, 0.0),                               
+    (3000.0, 200, 67.20),                              
+    (4000.0, 300, 200.20),                            
+    (5000.0, 400, 398.87),                             
+    (6000.0, 500, 643.14)                              
 ])
 def test_calcula_imposto_devido(rendimento, deducao, imposto_esperado):
     calculadora = CalculadoraImpostoRenda()
