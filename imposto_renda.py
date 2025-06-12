@@ -18,7 +18,8 @@ class CalculadoraImpostoRenda:
         self.deducoes.append({"descricao": descricao, "valor": valor})
 
     def get_total_deducoes(self):
-        return sum(d['valor'] for d in self.deducoes)
+        total = sum(d['valor'] for d in self.deducoes)
+        return round(total, 2)
 
     def get_base_de_calculo(self):
         total_rendimentos = self.get_total_rendimentos()
